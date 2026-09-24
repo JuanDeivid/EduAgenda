@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | EduAgenda</title>
+    <link rel="stylesheet" href="./css/LoginPage.css">
+    <script src="./js/LoginPage.js" defer ></script>
+</head>
+<body>
+    <main class="pagina-login">
+        <section class="apresentacao">
+            <img src="./assets/icons/livro.png"
+                class="logo-imagem"
+                alt="Ícone de um livro aberto">
+
+            <div class="texto-apresentacao">
+                <h1>EduAgenda</h1>
+                <p>Organize suas aulas, alunos e horários em um só lugar.</p>
+            </div>
+        </section>
+
+        <section class="cartao-login" aria-labelledby="titulo-login">
+            <div class="cabecalho-login">
+                <span>Bem-vindo de volta</span>
+                <h2 id="titulo-login">Acesse sua conta</h2>
+                <p>Entre para continuar organizando sua rotina.</p>
+            </div>
+
+            <form class="dados-login" action="login" method="POST">
+                <div class="campo">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+                </div>
+
+                <div class="campo">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="voce@email.com" required>
+                </div>
+
+                <div class="campo">
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+                </div>
+
+                <button class="botao-entrar" type="submit">Entrar</button>
+            </form>
+
+            <div class="painel-Cadastro">
+                <button class="botao-secundario" onclick="openPainelCadastro()">
+                    Criar cadastro
+                </button>
+                <dialog>
+                        <h1>Cadastro</h1>
+                        <form class="dados-cadastro" action="cadastro" method="POST">
+                            <div class="campo-cadastro">
+                                <label for="nome-cadastro">Nome</label>
+                                <input type="text" id="nome-cadastro" name="nome-cadastro"
+                                       placeholder="Digite seu nome" required>
+                            </div>
+
+                            <div class="campo-cadastro">
+                                <label for="email-cadastro">E-mail</label>
+                                <input type="email" id="email-cadastro" name="email-cadastro"
+                                       placeholder="seuemail@email.com" required>
+                            </div>
+                            <div class="campo-cadastro">
+                                <label for="senha-cadastro">Senha</label>
+                                <input type="password" id="senha-cadastro" name="senha-cadastro"
+                                       placeholder="Digite sua senha" required>
+                        <button class="botao-cadastrar" type="submit">Cadastrar</button>
+                        </form>
+                        <button class="botao-fechar" type="button" onclick="closeModalCad()">Fechar</button>
+                </dialog>
+                <button class="botao-link" type="button"
+                    onclick="window.location.href='EsqueciSenha.html'">
+                    Esqueci minha senha
+                </button>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

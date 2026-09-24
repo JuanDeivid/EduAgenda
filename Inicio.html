@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="Inicio.js" defer></script>
+    <link rel="stylesheet" href="./css/Inicio.css">
+    <title>Tela de início</title>
+</head>
+<body>
+    <header class="topo">
+        <img src="./assets/icons/livro.png" class="img" alt="Ícone de livro">
+        <div>
+            <h1>EduAgenda</h1>
+            <p>Organize suas aulas com praticidade</p>
+        </div>
+    </header>
+
+    <nav class="botoes" aria-label="Navegação principal">
+        <button class="botaoFlutuante" onclick="location.href='Inicio.html'">Início</button>
+        <button class="botaoFlutuante" onclick="location.href='Agendamento.html'">Agendar aula</button>
+        <button class="botaoFlutuante" onclick="location.href='Aulas.html'">Minhas aulas</button>
+        <button class="botaoFlutuante" onclick="location.href='Alunos.html'">Alunos</button>
+    </nav>
+
+    <main class="conteudo">
+        <section class="boas-vindas">
+            <span class=" etiqueta">PAINEL DO PROFESSOR</span>
+            <h2>Olá, professor(a)!</h2>
+            <p>Organize sua rotina e concentre-se no que realmente importa: ensinar.</p>
+            <button class="acao-principal" onclick="location.href='Agendamento.html'">
+                + Agendar nova aula
+            </button>
+        </section>
+
+        <section class="atalhos">
+            <div class="card">
+                <h3>Agendamentos</h3>
+                <p>Planeje suas próximas aulas.</p>
+            </div>
+
+            <div class="card">
+                <h3>Minhas aulas</h3>
+                <p>Consulte sua agenda rapidamente.</p>
+            </div>
+
+            <div class="card">
+                <h3>Alunos</h3>
+                <p>Gerencie seus alunos.</p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

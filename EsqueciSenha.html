@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Esqueci minha senha | EduAgenda</title>
+    <link rel="stylesheet" href="./css/LoginPage.css">
+</head>
+<body>
+    <main class="pagina-login">
+        <section class="cartao-login">
+            <div class="cabecalho-login">
+                <span>Recuperação de acesso</span>
+                <h1>Esqueceu sua senha?</h1>
+                <p>Informe seu e-mail para receber instruções.</p>
+            </div>
+
+            <form class="dados-login" id="form-recuperacao">
+                <div class="campo">
+                    <label for="email">E-mail</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="voce@email.com"
+                        required
+                    >
+                </div>
+
+                <button class="botao-entrar">Enviar instruções</button>
+            </form>
+
+            <p id="mensagem" role="status"></p>
+
+            <button class="botao-link" id="voltar-login" type="button">
+                Voltar para o login
+            </button>
+        </section>
+    </main>
+
+    <script>
+        const formulario = document.querySelector("#form-recuperacao");
+        const mensagem = document.querySelector("#mensagem");
+
+        formulario.addEventListener("submit", (evento) => {
+            evento.preventDefault();
+            mensagem.textContent = "Se o e-mail estiver cadastrado, você receberá as instruções em instantes.";
+            mensagem.style.color = "#087f5b";
+            formulario.reset();
+        });
+
+        document.querySelector("#voltar-login").onclick = () => {
+            window.location.href = "LoginPage.html";
+        };
+    </script>
+</body>
+</html>

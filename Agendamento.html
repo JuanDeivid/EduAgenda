@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agendamento de aulas</title>
+  <link rel="stylesheet" href="css/Agendamento.css" />
+</head>
+<body>
+  <div class="conteudo">
+    <header class="cabecalho">
+      <section class="apresentacao">
+        <img src="./assets/icons/livro.png" class="logo-imagem" alt="Ícone de um livro aberto">
+
+        <div class="texto-apresentacao">
+          <h1>EduAgenda</h1>
+          <p>Organize suas aulas, alunos e horários em um só lugar.</p>
+        </div>
+      </section>
+
+      <div class="usuario">
+        <span class="ponto"></span>
+        Aluno: Falecido Moisés
+      </div>
+    </header>
+
+    <main class="area">
+      <section class="caixa">
+        <div class="titulo-linha">
+          <h2>Agendar nova aula</h2>
+          <div class="status">
+            <span></span>
+            Disponível
+          </div>
+        </div>
+
+        <div class="formulario">
+          <form class="form">
+            <div class="grade">
+              <div class="campo">
+                <label for="aluno">Aluno</label>
+                <input id="aluno" type="text" value="Falecido Moisés" readonly />
+              </div>
+
+              <div class="campo">
+                <label for="turma">Turma</label>
+                <select id="turma">
+                  <option>Ensino Médio - 2A</option>
+                  <option>Ensino Fundamental - 6B</option>
+                  <option>Pré-vestibular</option>
+                </select>
+              </div>
+
+              <div class="campo">
+                <label for="disciplina">Disciplina</label>
+                <select id="disciplina">
+                  <option>Matemática</option>
+                  <option>Física</option>
+                  <option>Química</option>
+                  <option>Biologia</option>
+                  <option>Português</option>
+                  <option>História</option>
+                </select>
+              </div>
+
+              <div class="campo">
+                <label for="professor">Professor</label>
+                <select id="professor">
+                  <option>Prof. Carlos Mendes</option>
+                  <option>Prof. Ana Souza</option>
+                  <option>Prof. Daniel Rocha</option>
+                  <option>Prof. Fernanda Lima</option>
+                </select>
+              </div>
+
+              <div class="campo">
+                <label for="data">Data</label>
+                <input id="data" type="date" />
+              </div>
+
+              <div class="campo">
+                <label for="horario">Horário</label>
+                <select id="horario">
+                  <option>08:00</option>
+                  <option>09:30</option>
+                  <option>11:00</option>
+                  <option>14:00</option>
+                  <option>15:30</option>
+                  <option>17:00</option>
+                </select>
+              </div>
+
+              <div class="campo">
+                <label for="duracao">Duração</label>
+                <select id="duracao">
+                  <option>50 min</option>
+                  <option>1h</option>
+                  <option>1h30</option>
+                  <option>2h</option>
+                </select>
+              </div>
+
+              <div class="campo">
+                <label for="sala">Local</label>
+                <select id="sala">
+                  <option>Sala 1</option>
+                  <option>Sala 2</option>
+                  <option>Laboratório</option>
+                  <option>Online</option>
+                </select>
+              </div>
+
+              <div class="campo campo-largo">
+                <label for="observacoes">Observações</label>
+                <textarea id="observacoes" placeholder="Descreva o motivo ou o conteúdo desejado..."></textarea>
+              </div>
+            </div>
+
+            <div class="linha-acoes">
+              <button type="reset" class="botao botao-secundario">Limpar</button>
+              <button type="submit" class="botao botao-principal">Salvar agendamento</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <aside class="lado">
+        <div class="cartao">
+          <div class="cabecalho-cartao">Resumo do aluno</div>
+          <div class="conteudo-cartao">
+            <div class="resumo">
+              <div class="bloco-resumo">
+                <div class="rotulo">Próximo agendamento</div>
+                <strong>22/09 - 14:00</strong>
+              </div>
+
+              <div class="bloco-resumo">
+                <div class="rotulo">Aulas marcadas</div>
+                <strong>02</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cartao">
+          <div class="cabecalho-cartao">Disponibilidade</div>
+          <div class="conteudo-cartao">
+            <div class="lista-horarios">
+              <div class="horario">
+                <div>
+                  <strong>Segunda</strong>
+                  <small>09:30 às 11:00</small>
+                </div>
+                <span class="etiqueta">Livre</span>
+              </div>
+
+              <div class="horario">
+                <div>
+                  <strong>Quarta</strong>
+                  <small>14:00 às 15:30</small>
+                </div>
+                <span class="etiqueta">Livre</span>
+              </div>
+
+              <div class="horario">
+                <div>
+                  <strong>Sexta</strong>
+                  <small>17:00 às 18:00</small>
+                </div>
+                <span class="etiqueta">Livre</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <section class="caixa lista-caixa">
+      <div class="titulo-linha">
+        <h2>Meus agendamentos</h2>
+        <div class="status">
+          <span></span>
+          Atualizado
+        </div>
+      </div>
+
+      <div class="formulario">
+        <ul class="lista">
+          <li class="item">
+            <div class="topo-item">
+              <div class="materia">Matemática</div>
+              <span class="tag">Confirmado</span>
+            </div>
+            <div class="meta">
+              <div><strong>Professor:</strong> Prof. Carlos Mendes</div>
+              <div><strong>Data:</strong> 22/09/2026 • 14:00</div>
+              <div><strong>Local:</strong> Sala 2</div>
+            </div>
+          </li>
+
+          <li class="item">
+            <div class="topo-item">
+              <div class="materia">Física</div>
+              <span class="tag">Confirmado</span>
+            </div>
+            <div class="meta">
+              <div><strong>Professor:</strong> Prof. Ana Souza</div>
+              <div><strong>Data:</strong> 25/09/2026 • 15:30</div>
+              <div><strong>Local:</strong> Laboratório</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
