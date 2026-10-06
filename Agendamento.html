@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Agendamento de aulas</title>
   <link rel="stylesheet" href="css/Agendamento.css" />
-  <script src="Agendamento.js" defer></script>
+  <script src="js/Agendamento.js" defer></script>
 </head>
+
 <body>
   <div class="conteudo">
     <header class="cabecalho">
@@ -19,10 +21,6 @@
         </div>
       </section>
 
-      <div class="usuario">
-        <span class="ponto"></span>
-        Aluno: Falecido Moisés
-      </div>
     </header>
 
     <main class="area">
@@ -40,7 +38,7 @@
             <div class="grade">
               <div class="campo">
                 <label for="aluno">Aluno</label>
-                <input id="aluno" type="text" value="Falecido Moisés" readonly />
+                <input id="aluno" type="text" placeholder="Digite o nome do aluno" required />
               </div>
 
               <div class="campo">
@@ -215,4 +213,5 @@
     </section>
   </div>
 </body>
+
 </html>
