@@ -220,6 +220,41 @@ dialog {
     background: #dcecf7;
 }
 
+.campo-senha {
+    position: relative;
+    width: 300px;
+}
+
+.campo-senha input {
+    width: 100%;
+    padding-right: 45px;
+    box-sizing: border-box;
+}
+
+.campo-senha {
+    position: relative;
+    width: 100%;
+}
+
+.campo-senha input {
+    width: 100%;
+    padding-right: 45px;
+    box-sizing: border-box;
+}
+
+.campo-senha button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    border: none;
+    background: transparent;
+    cursor: pointer;
+
+    font-size: 18px;
+}
+
 @media (max-width: 700px) {
     .pagina-login {
         flex-direction: column;

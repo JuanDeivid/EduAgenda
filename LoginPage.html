@@ -47,28 +47,29 @@
             </form>
 
             <div class="painel-Cadastro">
-                <button class="botao-secundario" onclick="openPainelCadastro()">
+                <button class="botao-secundario" onclick="openModalCad()">
                     Criar cadastro
                 </button>
                 <dialog>
                         <h1>Cadastro</h1>
                         <form class="dados-cadastro" action="cadastro" method="POST">
                             <div class="campo-cadastro">
-                                <label for="nome-cadastro">Nome</label>
+                                <label id="Lnome-cadastro" for="Lnome-cadastro">Nome</label>
                                 <input type="text" id="nome-cadastro" name="nome-cadastro"
                                        placeholder="Digite seu nome" required>
                             </div>
 
                             <div class="campo-cadastro">
-                                <label for="email-cadastro">E-mail</label>
+                                <label id="Lemail-cadastro" for="Lemail-cadastro">E-mail</label>
                                 <input type="email" id="email-cadastro" name="email-cadastro"
                                        placeholder="seuemail@email.com" required>
                             </div>
                             <div class="campo-cadastro">
-                                <label for="senha-cadastro">Senha</label>
-                                <input type="password" id="senha-cadastro" name="senha-cadastro"
-                                       placeholder="Digite sua senha" required>
-                        <button class="botao-cadastrar" type="submit">Cadastrar</button>
+                                <label id="Lsenha-cadastro" for="senha-cadastro">Senha</label>
+                                <input type="password" id="senha-cadastro" name="senha-cadastro" placeholder="Digite sua senha" required>
+                                <button type="button" id="mostrarSenha">👁️</button>
+                            </div>
+                        <button onclick="cadastrar(event)" ="botao-cadastrar" type="submit">Cadastrar</button>
                         </form>
                         <button class="botao-fechar" type="button" onclick="closeModalCad()">Fechar</button>
                 </dialog>
