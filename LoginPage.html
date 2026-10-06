@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | EduAgenda</title>
     <link rel="stylesheet" href="./css/LoginPage.css">
-    <script src="./js/LoginPage.js" defer ></script>
+    <script src="./js/LoginPage.js" defer></script>
 </head>
+
 <body>
     <main class="pagina-login">
         <section class="apresentacao">
-            <img src="./assets/icons/livro.png"
-                class="logo-imagem"
-                alt="Ícone de um livro aberto">
+            <img src="./assets/icons/livro.png" class="logo-imagem" alt="Ícone de um livro aberto">
 
             <div class="texto-apresentacao">
                 <h1>EduAgenda</h1>
@@ -27,7 +27,7 @@
                 <p>Entre para continuar organizando sua rotina.</p>
             </div>
 
-            <form class="dados-login" action="login" method="POST">
+            <form class="dados-login" onsubmit="logar(event)">
                 <div class="campo">
                     <label for="nome">Nome</label>
                     <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
@@ -50,35 +50,38 @@
                 <button class="botao-secundario" onclick="openModalCad()">
                     Criar cadastro
                 </button>
-                <dialog>
-                        <h1>Cadastro</h1>
-                        <form class="dados-cadastro" action="cadastro" method="POST">
-                            <div class="campo-cadastro">
-                                <label id="Lnome-cadastro" for="Lnome-cadastro">Nome</label>
-                                <input type="text" id="nome-cadastro" name="nome-cadastro"
-                                       placeholder="Digite seu nome" required>
-                            </div>
+                <dialog id="dialog">
+                    <h1>Cadastro</h1>
+                    <form class="dados-cadastro" onsubmit="cadastrar(event)">
+                        <div class="campo-cadastro">
+                            <label id="Lnome-cadastro" for="Lnome-cadastro">Nome</label>
+                            <input type="text" id="nome-cadastro" name="nome-cadastro" placeholder="Digite seu nome"
+                                required>
+                        </div>
 
-                            <div class="campo-cadastro">
-                                <label id="Lemail-cadastro" for="Lemail-cadastro">E-mail</label>
-                                <input type="email" id="email-cadastro" name="email-cadastro"
-                                       placeholder="seuemail@email.com" required>
-                            </div>
-                            <div class="campo-cadastro">
-                                <label id="Lsenha-cadastro" for="senha-cadastro">Senha</label>
-                                <input type="password" id="senha-cadastro" name="senha-cadastro" placeholder="Digite sua senha" required>
-                                <button type="button" id="mostrarSenha">👁️</button>
-                            </div>
-                        <button onclick="cadastrar(event)" ="botao-cadastrar" type="submit">Cadastrar</button>
-                        </form>
-                        <button class="botao-fechar" type="button" onclick="closeModalCad()">Fechar</button>
+                        <div class="campo-cadastro">
+                            <label id="Lemail-cadastro" for="Lemail-cadastro">E-mail</label>
+                            <input type="email" id="email-cadastro" name="email-cadastro"
+                                placeholder="seuemail@email.com" required>
+                        </div>
+                        <div class="campo-cadastro">
+                            <label id="Lsenha-cadastro" for="senha-cadastro">Senha</label>
+                            <input type="password" id="senha-cadastro" name="senha-cadastro"
+                                placeholder="Digite sua senha" required>
+                            <button type="button" id="mostrarSenha">👁️</button>
+                        </div>
+                        <button class="botao-cadastrar" type="submit">
+                            Cadastrar
+                        </button>
+                    </form>
+                    <button class="botao-fechar" type="button" onclick="closeModalCad()">Fechar</button>
                 </dialog>
-                <button class="botao-link" type="button"
-                    onclick="window.location.href='EsqueciSenha.html'">
+                <button class="botao-link" type="button" onclick="window.location.href='EsqueciSenha.html'">
                     Esqueci minha senha
                 </button>
             </div>
         </section>
     </main>
 </body>
+
 </html>

@@ -1,4 +1,4 @@
-const modal = document.querySelector('dialog');
+const modal = document.querySelector("dialog");
 
 function openModalCad() {
     modal.showModal();
@@ -8,16 +8,17 @@ function closeModalCad() {
     modal.close();
 }
 
-let nomeCadastro = document.querySelector("#nome-cadastro")
-let LnomeCadastro = document.querySelector("#Lnome-cadastro")
+//CADASTRO
+const nomeCadastro = document.querySelector("#nome-cadastro");
+const LnomeCadastro = document.querySelector("#Lnome-cadastro");
 
-let emailCadastro = document.querySelector("#email-cadastro")
-let LemailCadastro = document.querySelector("#Lemail-cadastro")
+const emailCadastro = document.querySelector("#email-cadastro");
+const LemailCadastro = document.querySelector("#Lemail-cadastro");
 
-let senhaCadastro = document.querySelector("#senha-cadastro")
-let LsenhaCadastro = document.querySelector("#Lsenha-cadastro")
-const mostrarSenha = document.getElementById("mostrarSenha");
+const senhaCadastro = document.querySelector("#senha-cadastro");
+const LsenhaCadastro = document.querySelector("#Lsenha-cadastro");
 
+const mostrarSenha = document.querySelector("#mostrarSenha");
 
 nomeCadastro.addEventListener("input", () => {
 
@@ -40,7 +41,6 @@ nomeCadastro.addEventListener("input", () => {
         LnomeCadastro.innerHTML = "Nome";
         LnomeCadastro.style.color = "green";
         nomeCadastro.style.borderColor = "green";
-
     }
 });
 
@@ -65,7 +65,6 @@ emailCadastro.addEventListener("input", () => {
         LemailCadastro.innerHTML = "E-mail";
         LemailCadastro.style.color = "green";
         emailCadastro.style.borderColor = "green";
-
     }
 });
 
@@ -97,55 +96,72 @@ senhaCadastro.addEventListener("input", () => {
         LsenhaCadastro.innerHTML = "Senha";
         LsenhaCadastro.style.color = "green";
         senhaCadastro.style.borderColor = "green";
-
     }
 });
+
 
 mostrarSenha.addEventListener("click", () => {
 
     if (senhaCadastro.type === "password") {
         senhaCadastro.type = "text";
-        mostrarSenha.innerHTML = "👁️";
     } else {
         senhaCadastro.type = "password";
-        mostrarSenha.innerHTML = "👁️";
     }
 
 });
-
 
 function cadastrar(event) {
 
     event.preventDefault();
 
+    const nome = nomeCadastro.value.trim();
+    const email = emailCadastro.value.trim();
+    const senha = senhaCadastro.value;
+
+    const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+
+    const emailJaCadastrado = usuarios.some(usuario =>
+        usuario.email === email
+    );
+
+    if (emailJaCadastrado) {
+
+        alert("Este e-mail já está cadastrado.");
+        return;
+
+    }
+
     if (
-        nomeCadastro.value.length >= 5 &&
-        !/[^a-zA-ZÀ-ÿ\s´~^]/.test(nomeCadastro.value) &&
-        emailCadastro.value.includes("@") &&
-        emailCadastro.value.includes(".com") &&
-        senhaCadastro.value.length >= 7 &&
-        /[A-Za-z]/.test(senhaCadastro.value) &&
-        /[0-9]/.test(senhaCadastro.value)
+        nome.length >= 5 &&
+        !/[^a-zA-ZÀ-ÿ\s´~^]/.test(nome) &&
+        email.includes("@") &&
+        email.includes(".com") &&
+        senha.length >= 7 &&
+        /[A-Za-z]/.test(senha) &&
+        /[0-9]/.test(senha)
     ) {
 
         const usuario = {
-            nome: nomeCadastro.value,
-            email: emailCadastro.value,
-            senha: senhaCadastro.value
+            nome: nome,
+            email: email,
+            senha: senha
         };
 
-        const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
         usuarios.push(usuario);
-        localStorage.setItem("usuarios", JSON.stringify(usuarios));
+
+        localStorage.setItem(
+            "usuarios",
+            JSON.stringify(usuarios)
+        );
 
         nomeCadastro.value = "";
         emailCadastro.value = "";
         senhaCadastro.value = "";
 
-
         alert("Cadastro criado com sucesso!");
 
-        document.getElementById("dialog").close();
+        modal.close();
 
     } else {
 
@@ -153,3 +169,42 @@ function cadastrar(event) {
 
     }
 }
+
+// LOGIN
+
+function logar(event) {
+
+    event.preventDefault();
+
+    const nome = document.querySelector("#nome").value.trim();
+    const email = document.querySelector("#email").value.trim();
+    const senha = document.querySelector("#senha").value;
+
+    const usuarios = JSON.parse(
+        localStorage.getItem("usuarios")
+    ) || [];
+
+
+    const usuarioEncontrado = usuarios.find(usuario =>
+        usuario.nome === nome &&
+        usuario.email === email &&
+        usuario.senha === senha
+    );
+
+
+    if (!usuarioEncontrado) {
+
+        alert("Nome, e-mail ou senha incorretos.");
+        return;
+
+    }
+
+
+    localStorage.setItem(
+        "usuarioLogado",
+        JSON.stringify(usuarioEncontrado)
+    );
+
+    window.location.href = "Inicio.html";
+}
+
